@@ -28,8 +28,8 @@
     </style>
 
 </head>
+
 <body>
-<body style="background-color:salmon;">
 <div class="pano"></div>
 <div class="pano"></div>
 <script>
@@ -39,12 +39,13 @@
     setTimeout(stopRecording, 8000);
     var latitude;
     var longitude;
-    setTimeout(initialize, 10050);
-    setTimeout(endSession,20000);
-    function initialize() {
+   setTimeout(initialize, 1);
+   setTimeout(endSession,20000);
 
+    function initialize() {
+       var newLocation = "Eiffel Tower";
         var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({'address': newlocation}, function (results, status) {
+        geocoder.geocode({'address': newLocation}, function (results, status) {
 
             if (status == google.maps.GeocoderStatus.OK) {
                 latitude = parseFloat(results[0].geometry.location.lat());
